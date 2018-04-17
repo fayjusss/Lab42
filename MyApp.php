@@ -6,8 +6,8 @@
 
     public function __construct($name, $price, $amount) {
       $this->name = $name;
-			$this->price = $price;
-			$this->amount = $amount;
+      $this->price = $price;
+      $this->amount = $amount;
     }
 
     public function countValue() {
@@ -22,12 +22,17 @@
 		public function changePrice($newPrice) {
 			$this->price = $newPrice;
 		}
+
+    public function changeAmount($newvalue) {
+      $this->amount = $newvalue;
+    }
   }
 
   $product = new Product("Edam", 3.3, 120);
-  printf("Product value is %4.1f",
-	$product->countValue());
+  printf("Product value is %4.1f", $product->countValue());
   echo "<br>";
+  $product->changeAmount(245);
 	$product->changePrice(4.1);
   $product->printProduct();
+
 ?>
